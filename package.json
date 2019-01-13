@@ -1,0 +1,16 @@
+{
+  "name": "ZT | AV8R",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "Aras",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "moment": "^2.22.2",
+    "ms": "^2.1.1"
+  }
+}

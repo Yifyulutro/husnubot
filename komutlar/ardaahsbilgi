@@ -1,0 +1,32 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const ayarlar = require('../ayarlar.json');
+
+exports.run = (client, message) => {
+  if (message.channel.type !== 'dm') {
+    const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Bilgiyi Özel Mesajlarına attım tabi kapalı değilse :loudspeaker:');
+    message.channel.sendEmbed(ozelmesajkontrol) }
+	const pingozel = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('**ArdaAhs Bilgiye Hoşgeldiniz**\n\nArdanın Youtube Kanalı = https://www.youtube.com/channel/UCwhhIBPmeEyd1hJxNZjGNww\n\nArdanın Roblox Hesabı (Tek Gerçek Hesaptır) = https://www.roblox.com/users/161149853/profile\n\n**ZenoxTeam 2018**');
+    return message.author.sendEmbed(pingozel)
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['ardaahs' , 'ardaahsbilgi'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'ardaahsbilgi',
+  description: 'ArdaAhs hakkında bilgi verir.',
+  usage: 'ardaahsbilgi'
+};

@@ -1,0 +1,32 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const ayarlar = require('../ayarlar.json');
+
+exports.run = (client, message) => {
+  if (message.channel.type !== 'dm') {
+    const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Mesajı Görebilmek İçin özel mesajlarını aç :postbox:');
+    message.channel.sendEmbed(ozelmesajkontrol) }
+	const pingozel = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Videolar Cumartesi ve Pazar gelir hepsi kaliteli ve eğlencelidir...\n\n Daha fazla komut eklenecek takipte kalın\n\n**ZenoxTeam 2018**');
+    return message.author.sendEmbed(pingozel)
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['videohakkında'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'video',
+  description: 'ArdaAhsın yayınladığı videolar hakkında bilgi verir',
+  usage: 'video'
+};

@@ -1,0 +1,32 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const ayarlar = require('../ayarlar.json');
+
+exports.run = (client, message) => {
+  if (message.channel.type !== 'dm') {
+    const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Bilgiyi Özel Mesajlarına attım tabi kapalı değilse :loudspeaker:');
+    message.channel.sendEmbed(ozelmesajkontrol) }
+	const pingozel = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('**Burada Bilgi Komutlarına Dair Herşeyi Bulabilirsin !**\n\n**Komutlar**\n\n+yardım\n+barışbilgi\n+ardaahsbilgi\n+sunucubilgi\n+kullanıcıbilgim\n+istatistik\n+bilgi\n\n**ZenoxTeam 2018**');
+    return message.author.sendEmbed(pingozel)
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['bilgi' , 'bilgikomutları'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'bilgikomutları',
+  description: 'Botta olan bilgi komutları hakkında bilgi verir.',
+  usage: 'bilgikomutları'
+};
